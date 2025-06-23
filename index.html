@@ -9,18 +9,50 @@
       font-family: Arial, sans-serif;
       background-color: #f8f9fa;
       margin: 0;
-      padding: 0;
+      display: flex;
+      min-height: 100vh;
     }
     header {
       background-color: #343a40;
       color: white;
       padding: 1rem;
       text-align: center;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    .sidebar {
+      width: 250px;
+      background-color: #ffffff;
+      padding: 2rem 1rem;
+      border-right: 1px solid #dee2e6;
+      margin-top: 80px;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      overflow-y: auto;
+    }
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .sidebar li {
+      margin-bottom: 1rem;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    .sidebar a:hover {
+      text-decoration: underline;
     }
     main {
+      margin-left: 270px;
       padding: 2rem;
       max-width: 800px;
-      margin: auto;
+      margin-top: 100px;
     }
     .lesson {
       background-color: white;
@@ -43,10 +75,19 @@
 <body>
   <header>
     <h1>Scenariusze Lekcji - Technikum</h1>
-    <p>Wybierz temat, aby zapoznać się ze scenariuszem lekcji</p>
+    <p>Wybierz temat z listy po lewej stronie</p>
   </header>
+
+  <nav class="sidebar">
+    <ul>
+      <li><a href="#lesson1">1. Podstawy programowania</a></li>
+      <li><a href="#lesson2">2. Sieci komputerowe</a></li>
+      <li><a href="#lesson3">3. Bazy danych</a></li>
+    </ul>
+  </nav>
+
   <main>
-    <div class="lesson">
+    <div class="lesson" id="lesson1">
       <h2>1. Podstawy programowania</h2>
       <div class="scenario">
         <p><strong>Cel lekcji:</strong> Zapoznanie się z podstawowymi konstrukcjami języka Python.</p>
@@ -60,5 +101,33 @@
       </div>
     </div>
 
-    <div class="lesson">
+    <div class="lesson" id="lesson2">
+      <h2>2. Sieci komputerowe</h2>
+      <div class="scenario">
+        <p><strong>Cel lekcji:</strong> Zrozumienie działania podstawowych protokołów sieciowych.</p>
+        <p><strong>Etapy:</strong></p>
+        <ul>
+          <li>Model OSI</li>
+          <li>Adresowanie IP</li>
+          <li>Konfiguracja sieci lokalnej</li>
+          <li>Symulacje w Packet Tracer</li>
+        </ul>
+      </div>
+    </div>
 
+    <div class="lesson" id="lesson3">
+      <h2>3. Bazy danych</h2>
+      <div class="scenario">
+        <p><strong>Cel lekcji:</strong> Nauka podstaw tworzenia i zarządzania relacyjną bazą danych.</p>
+        <p><strong>Etapy:</strong></p>
+        <ul>
+          <li>Tworzenie tabel</li>
+          <li>Wstawianie i modyfikowanie danych</li>
+          <li>Zapytania SELECT</li>
+          <li>Relacje i klucze obce</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
